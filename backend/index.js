@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import connectDB from "./src/db/connectDB.js";
 // require('dotenv').config()
 import router from "./src/routes/index.routes.js";
+import cookieParser from "cookie-parser";
 
 
 
@@ -17,6 +18,7 @@ app.use(cors({
     credentials: true
 }))
 app.use(express.json())
+app.use(cookieParser)
 
 const port = process.env.PORT || 3000
 app.get('/', (req, res) => {
