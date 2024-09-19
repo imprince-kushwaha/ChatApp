@@ -11,7 +11,7 @@ const RegisterPage = () => {
         name: "",
         email: "",
         password: "",
-        picture: ""
+        profile_pic: ""
     })
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -34,7 +34,7 @@ const RegisterPage = () => {
         setFormData((prevData) => {
             return {
                 ...prevData,
-                picture: uploadPhoto?.url
+                profile_pic: uploadPhoto?.url
             }
         })
     }
@@ -62,7 +62,7 @@ const RegisterPage = () => {
                     name: "",
                     email: "",
                     password: "",
-                    picture: ""
+                    profile_pic: ""
                 })
                 navigate('/email')
             }
@@ -123,7 +123,7 @@ const RegisterPage = () => {
                         </div>
 
                         <div className="mb-4">
-                            <label htmlFor="picture" className="block font-medium text-base mb-2">Photo
+                            <label htmlFor="profile_pic" className="block font-medium text-base mb-2">Photo
                                 <div className='h-10 bg-gray-100 flex justify-center items-center hover:cursor-pointer rounded-lg'>
                                     <p className='text-sm max-w-[300px] text-ellipsis line-clamp-1'>
                                         {
@@ -140,8 +140,8 @@ const RegisterPage = () => {
                             </label>
                             <input
                                 type="file"
-                                name="picture"
-                                id="picture"
+                                name="profile_pic"
+                                id="profile_pic"
                                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 hidden"
                                 onChange={handleUploadPhoto}
                             />
