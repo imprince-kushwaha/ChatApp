@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import { Outlet, useNavigate } from "react-router-dom"
+import { Outlet, useLocation, useNavigate } from "react-router-dom"
 import axios from 'axios'
 import Header from "../components/Header"
 import { useDispatch, useSelector } from "react-redux"
@@ -8,7 +8,7 @@ import SideBar from "../components/SideBar"
 
 const Home = () => {
     const user = useSelector(state => state.user)
-    console.log("redux user", user)
+    // console.log("redux user", user)
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
@@ -25,7 +25,7 @@ const Home = () => {
 
                 navigate('/email')
             }
-            console.log("current user", response)
+            // console.log("current user", response)
         } catch (error) {
             console.log("error", error)
         }
