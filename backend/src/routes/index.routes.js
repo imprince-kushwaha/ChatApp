@@ -5,6 +5,7 @@ import { checkPassword } from "../controllers/checkPassword.controller.js";
 import { userDetails } from "../controllers/userDetails.controller.js";
 import { logout } from "../controllers/logout.controller.js";
 import { updateUserDetails } from "../controllers/updateUserDeatils.controller.js";
+import { searchUser } from "../controllers/searchUser.controller.js";
 
 const router = Router()
 // creating user api route
@@ -18,6 +19,8 @@ router.get('/user-details',userDetails)
 // logout user
 router.get('/logout',logout)
 // update user deatils
-router.get('/update-user',updateUserDetails)
+router.post('/update-user',updateUserDetails)
+// search user
+router.post('/search-user',searchUser)
 
 export default router
