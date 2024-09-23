@@ -8,11 +8,11 @@ import connectDB from "./src/db/connectDB.js";
 import router from "./src/routes/index.routes.js";
 import cookieParser from "cookie-parser";
 
-
+import {app,server} from './src/socket/index.socket.js'
 
 dotenv.config();
 
-const app = express()
+// const app = express()
 app.use(cors({
     origin: process.env.FRONTEND_URL,
     credentials: true
@@ -28,7 +28,10 @@ app.get('/', (req, res) => {
 app.use('/api',router)
 
 connectDB().then(() => {
-    app.listen(port, () => {
+    // app.listen(port, () => {
+    //     console.log(`Example app listening on port ${port}`)
+    // })
+    server.listen(port, () => {
         console.log(`Example app listening on port ${port}`)
     })
 })

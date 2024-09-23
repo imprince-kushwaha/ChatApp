@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { act } from 'react'
 
 const initialState = {
     _id: "",
@@ -6,7 +7,11 @@ const initialState = {
     email: "",
     // picture: "",
     profile_pic: "",
-    token: ""
+    token: "",
+    // to show the user is online or not
+    onlineUser:[],
+    // socket 
+    socketConnection:null
 }
 
 export const userSlice = createSlice({
@@ -30,11 +35,18 @@ export const userSlice = createSlice({
             // state.picture=""
             state.profile_pic=""
             state.token=""
+            state.socketConnection=null
+        },
+        setOnlineUser:(state,action)=>{
+            state.onlineUser=action.payload
+        },
+        setSocketConnection:(state,action)=>{
+            state.socketConnection=action.payload
         }
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { setUser,setToken,logout} = userSlice.actions
+export const { setUser,setToken,logout,setOnlineUser,setSocketConnection} = userSlice.actions
 
 export default userSlice.reducer

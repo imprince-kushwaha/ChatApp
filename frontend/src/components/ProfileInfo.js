@@ -1,8 +1,12 @@
 import React from 'react'
 import { PiUserCircleLight } from "react-icons/pi";
+import { useSelector } from 'react-redux';
 
 
 const ProfileInfo = ({userId,name,imageUrl,width,height}) => {
+    const onlineUser=useSelector(state=>state?.user?.onlineUser)
+
+
     let avatarName=""
     if(name){
         const splitName=name?.split(" ")
@@ -27,8 +31,9 @@ const ProfileInfo = ({userId,name,imageUrl,width,height}) => {
     ]
     const randomnumber=Math.floor(Math.random()*10)
     // console.log(randomnumber)
+    const isOnline=onlineUser.includes(userId) //if online then return true else false
   return (
-    <div className='text-slate-700 overflow-hidden rounded-full font-bold '>
+    <div className='text-slate-700 rounded-full font-bold relative'>
       {
         imageUrl?(
             <img src={imageUrl} width={width} height={height} alt={name}/>
@@ -38,6 +43,11 @@ const ProfileInfo = ({userId,name,imageUrl,width,height}) => {
             </div>
         ):(
             <PiUserCircleLight size={width} />
+        )
+      }
+      {
+        isOnline&&(
+            <div className='bg-green-700 p-1 absolute bottom-2 -right-1 z-10 rounded-full'></div>
         )
       }
     </div>
