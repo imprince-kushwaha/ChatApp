@@ -150,7 +150,7 @@ const MessagePage = () => {
 
   return (
     <div style={{ backgroundImage: `url(${backgroundImage})` }} className='h-[calc(100%-5rem)] bg-no-repeat bg-cover'>
-      <header className='sticky top-0 h-16 bg-red-600 flex justify-between items-center px-4'>
+      <header className='sticky top-0 h-16 bg-sky-300 flex justify-between items-center px-4'>
         <div className='flex items-center gap-4 '>
           <Link to={"/"} className='lg:hidden'><TfiAngleLeft size={30} />
           </Link>
@@ -238,7 +238,7 @@ const MessagePage = () => {
       </section>
 
       {/* send message */}
-      <section className='h-16 bg-purple-600 flex items-center p-4'>
+      <section className='h-16 bg-gray-300 flex items-center p-4'>
         <div className='relative '>
           <button className='flex justify-center items-center w-11 h-11 rounded-full bg-gradient-to-r from-green-500 to-teal-600 text-white shadow-lg hover:bg-gradient-to-r hover:from-green-700 hover:to-teal-800 transition duration-300' onClick={handleUploadImageVideoOpen}><FiPlus size={25} /></button>
 
@@ -266,7 +266,7 @@ const MessagePage = () => {
         {/* Input box */}
         <form className='w-full h-10 m-4 flex gap-2' onSubmit={handleSendMessage}>
           <input type='text' placeholder='Type Message Here...' className='py-1 px-4 outline-none w-full h-full bg-gray-200 rounded-md' value={message.text} onChange={handleOnType} />
-          <button className='text-green-500 hover:text-teal-800 flex items-center justify-center w-10 h-full'><IoMdSend size={25} /></button>
+          <button className='text-sky-500 hover:text-sky-700 flex items-center justify-center w-10 h-full'><IoMdSend size={25} /></button>
         </form>
       </section>
 

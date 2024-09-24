@@ -6,7 +6,14 @@ import CheckPasswordPage from "../pages/CheckPasswordPage";
 import Home from "../pages/Home";
 import MessagePage from "../components/MessagePage";
 import ForgotPassword from "../pages/ForgotPassword";
+import ProtectedRoute from "../components/ProtectedRoute";
 
+
+const isLoggedIn = () => {
+    // Replace this with your actual logic to check if the user is logged in
+    const token = localStorage.getItem('token');
+    return !!token;
+};
 
 const router=createBrowserRouter([
     {
@@ -35,7 +42,14 @@ const router=createBrowserRouter([
             // },
             {
                 path:"",
-                element:<Home/>,
+                element:
+                // <Home/>
+                (
+                    <ProtectedRoute isLoggedIn={isLoggedIn()}>
+                        <Home />  {/* This is the chat page */}
+                    </ProtectedRoute>
+                )
+                ,
                 children:[{
                     path:":userId",
                     element:<MessagePage/>

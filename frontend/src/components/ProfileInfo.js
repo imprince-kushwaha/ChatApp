@@ -36,7 +36,7 @@ const ProfileInfo = ({userId,name,imageUrl,width,height}) => {
     <div className='text-slate-700 rounded-full font-bold relative'>
       {
         imageUrl?(
-            <img src={imageUrl} width={width} height={height} alt={name}/>
+            <img src={imageUrl} width={width} height={height} alt={name} className='rounded-lg' />
         ):name?(
             <div className={`overflow-hidden rounded-full flex justify-center items-center text-lg ${bgColorDp[randomnumber]}`} style={{width:width+"px", height:height+"px"}}>
                 {avatarName}

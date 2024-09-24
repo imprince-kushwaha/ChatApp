@@ -60,7 +60,7 @@ const SearchUser = ({ onClose }) => {
                     }
                 </div>
             </div>
-            <div className='absolute top-0 right-0 text-2xl lg:text-3xl hover:text-red-800' onClick={onClose}> <button><IoMdClose /></button> </div>
+            <div className='absolute top-0 right-0 text-2xl lg:text-3xl hover:text-red-800 m-4' onClick={onClose}> <button><IoMdClose /></button> </div>
         </div>
     )
 }

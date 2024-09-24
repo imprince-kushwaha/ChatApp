@@ -2,7 +2,7 @@ import React from 'react'
 import ProfileInfo from './ProfileInfo'
 import { Link } from 'react-router-dom'
 
-const UserCard = ({user,onClose}) => {
+const UserCard = ({ user, onClose }) => {
   return (
     <Link to={"/"+user?._id} onClick={onClose} className='flex items-center gap-3 p-2 lg:p-4 border border-transparent border-b-slate-200 hover:border hover:border-cyan-300 rounded cursor-pointer'>
       <div>

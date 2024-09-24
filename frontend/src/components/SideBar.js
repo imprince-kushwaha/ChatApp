@@ -17,8 +17,8 @@ const SideBar = () => {
     const [alluser, setAllUSer] = useState([])
     const [openSearchUser, setOpenSearchUser] = useState(false)
     const socketConnection = useSelector(state => state?.user?.socketConnection)
-    const dispatch=useDispatch()
-    const navigate=useNavigate()
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     useEffect(() => {
         if (socketConnection) {
@@ -50,7 +50,7 @@ const SideBar = () => {
         }
     }, [socketConnection, user])
 
-    const handleLogout=()=>{
+    const handleLogout = () => {
         dispatch(logout())
         navigate("/email")
         localStorage.clear()
@@ -58,7 +58,7 @@ const SideBar = () => {
 
     return (
         <div className=' h-full flex'>
-            <div className='w-16 bg-slate-300 h-full rounded-tr-lg rounded-br-lg py-4 text-slate-800 flex flex-col justify-between p-2'>
+            <div className='w-16 bg-slate-200 h-full rounded-tr-lg rounded-br-lg py-4 text-slate-800 flex flex-col justify-between p-2'>
                 <div>
                     <div className='w-12 h-12 flex justify-center items-center hover:bg-slate-200 rounded' title='Chat'>
                         <IoChatbubbleEllipsesSharp size={30} />
@@ -78,11 +78,11 @@ const SideBar = () => {
                 </div>
             </div>
 
-            <div className='w-full'>
+            <div className='w-full bg-orange-50'>
                 {/* w-full */}
                 <h2 className='text-xl font-bold p-4 text-slate-800 h-16'>Chats</h2>
                 <div className='bg-slate-300 p-[0.5px]'></div>
-                <div className='h-[calc(100%-68px)] overflow-x-hidden overflow-y-scroll'>
+                <div className='custom-scroll h-[calc(100%-68px)] overflow-x-hidden overflow-y-scroll'>
                     {
                         alluser.length === 0 && (
                             <div>
@@ -93,7 +93,7 @@ const SideBar = () => {
                     {
                         alluser.map((conv, index) => {
                             return (
-                                <NavLink to={"/"+conv?.userDetails?._id} key={conv?._id} className='flex items-center gap-2 px-4 py-3 border border-transparent hover:border-green-400 rounded hover:bg-slate-100 cursor-pointer'>
+                                <NavLink to={"/" + conv?.userDetails?._id} key={conv?._id} className='flex items-center gap-2 px-4 py-3 border border-transparent hover:border-cyan-400 rounded-lg mx-2 my-1 hover:bg-slate-100 cursor-pointer'>
                                     <div>
                                         <ProfileInfo imageUrl={conv?.userDetails?.profile_pic} name={conv?.userDetails?.name} width={50} height={50} />
                                     </div>
@@ -123,7 +123,7 @@ const SideBar = () => {
                                         </div>
                                     </div>
                                     {
-                                        Boolean(conv?.unseenMsg)&&(
+                                        Boolean(conv?.unseenMsg) && (
                                             <p className='text-xs w-6 h-6 flex justify-center items-center ml-auto p-1 bg-green-400 text-white font-semibold rounded-full'>{conv?.unseenMsg}</p>
                                         )
                                     }
