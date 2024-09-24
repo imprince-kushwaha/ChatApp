@@ -91,12 +91,11 @@ const Home = () => {
                     <Outlet />
                 </section>
 
-                {/* Centered Logo and Text */}
-                <div className={`hidden lg:flex flex-col justify-center items-center gap-2 p-4 ${!basePath ? "hidden" : "flex lg:flex lg:w-3/4"}`}>
-                    <div className="">
+                <div className={`hidden flex-col justify-center items-center gap-2 p-4 ${!basePath ? "hidden" : "flex lg:flex lg:w-3/4"}`}>
+                    <div className="hidden lg:block">
                         <img src={logo} alt='Logo' className="w-40 lg:w-64" />
                     </div>
-                    <p className="text-base lg:text-lg text-slate-500 text-center">
+                    <p className=" hidden lg:block text-base lg:text-lg text-slate-500 text-center">
                         Select user to start chat
                     </p>
                 </div>

@@ -4,7 +4,6 @@ import dotenv from "dotenv";
 import http from 'http';
 import getUserDetailsFromToken from "../utils/getUserDetailsFromToken.utils.js";
 import { User } from "../models/user.model.js";
-import { profile } from "console";
 import {conversationModal,messageModal} from '../models/coversation.model.js'
 import { getConversation } from "../utils/getConversation.utils.js";
 
@@ -39,7 +38,7 @@ io.on('connection', async(socket) => {
     io.emit('onlineUser',Array.from(onlineUser))
 
     socket.on('message-page',async(userId)=>{
-        console.log('userid',userId)
+        // console.log('userid',userId)
         const userDetails=await User.findById(userId).select("-password")
 
         const payload={

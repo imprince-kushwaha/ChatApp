@@ -14,7 +14,7 @@ const CheckPasswordPage = () => {
   })
   const navigate = useNavigate()
   const location = useLocation()
-  console.log("location", location)
+  // console.log("location", location)
   const dispatch=useDispatch()
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const CheckPasswordPage = () => {
           password: formdata.password
         }, withCredentials: true
       })
-      console.log('response', response)
+      // console.log('response', response)
 
       toast.success(response.data.message)
       // after doing redux work 

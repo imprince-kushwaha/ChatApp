@@ -53,7 +53,7 @@ const RegisterPage = () => {
         // console.log(process.env.REACT_APP_BACKEND_URL)
         try {
             const response = await axios.post(URL, formdata)
-            console.log('response', response)
+            // console.log('response', response)
 
             toast.success(response?.data?.message)
             // if user created successfullly then formdata will be clear
