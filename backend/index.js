@@ -11,12 +11,31 @@ import cookieParser from "cookie-parser";
 import {app,server} from './src/socket/index.socket.js'
 
 dotenv.config();
+// List of allowed origins
+// const allowedOrigins = [
+//     'https://example1.com',
+//     'https://example2.com',
+//     'http://localhost:3000', // Local development
+// ];
 
+// // CORS configuration
+// const corsOptions = {
+//     origin: (origin, callback) => {
+//         // Allow requests with no origin (like mobile apps or curl requests)
+//         if (!origin) return callback(null, true);
+        
+//         // Check if the incoming origin is in the allowed origins list
+//         if (allowedOrigins.indexOf(origin) !== -1) {
+//             callback(null, true); // Origin is allowed
+//         } else {
+//             callback(new Error('Not allowed by CORS')); // Origin is not allowed
+//         }
+//     },
+//     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed HTTP methods
+//     credentials: true, // If you want to allow credentials (cookies, authorization headers, etc.)
+// };
 // const app = express()
-app.use(cors({
-    origin: process.env.FRONTEND_URL,
-    credentials: true
-}))
+app.use(cors())
 app.use(express.json())
 app.use(cookieParser())
 

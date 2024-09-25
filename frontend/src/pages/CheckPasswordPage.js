@@ -21,7 +21,7 @@ const CheckPasswordPage = () => {
     if (!location?.state?.name) {
       navigate('/email')
     }
-  }, [])
+  })
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => {

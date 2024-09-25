@@ -36,7 +36,7 @@ const Home = () => {
     }
     useEffect(() => {
         fetchUserDetails()
-    }, [])
+    })
 
     // socket connection
     useEffect(() => {
