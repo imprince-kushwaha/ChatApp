@@ -2,14 +2,14 @@ import React, { useEffect } from "react"
 import { Outlet, useLocation, useNavigate } from "react-router-dom"
 import axios from 'axios'
 import Header from "../components/Header"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { logout, setOnlineUser, setSocketConnection, setUser } from "../redux/userSlice"
 import SideBar from "../components/SideBar"
 import logo from '../assets/logo.png'
 import io from 'socket.io-client';
 
 const Home = () => {
-    const user = useSelector(state => state.user)
+    // const user = useSelector(state => state.user)
     // console.log("redux user", user)
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -36,7 +36,8 @@ const Home = () => {
     }
     useEffect(() => {
         fetchUserDetails()
-    })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
 
     // socket connection
     useEffect(() => {
@@ -55,7 +56,8 @@ const Home = () => {
         return () => {
             socketConnection.disconnect()
         }
-    }, [])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
 
     const basePath = location.pathname === '/chat'
     return (

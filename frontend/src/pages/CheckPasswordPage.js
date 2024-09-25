@@ -5,7 +5,7 @@ import axios from 'axios'
 import toast from 'react-hot-toast';
 import ProfileInfo from '../components/ProfileInfo';
 import { useDispatch } from 'react-redux';
-import { setToken, setUser } from '../redux/userSlice';
+import { setToken } from '../redux/userSlice';
 
 const CheckPasswordPage = () => {
   const [formdata, setFormData] = useState({
@@ -21,7 +21,8 @@ const CheckPasswordPage = () => {
     if (!location?.state?.name) {
       navigate('/email')
     }
-  })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => {

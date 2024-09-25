@@ -114,7 +114,7 @@ const MessagePage = () => {
   }, [socketConnection, params?.userId, user])
 
   const handleOnType = (e) => {
-    const { name, value } = e.target
+    const { value } = e.target
     setMessage(prev => {
       return {
         ...prev,
@@ -183,7 +183,7 @@ const MessagePage = () => {
                   <div className='w-full'>
                     {
                       msg.imageUrl && (
-                        <img src={msg?.imageUrl} className='w-full h-full object-scale-down' />
+                        <img src={msg?.imageUrl} className='w-full h-full object-scale-down' alt='prev_img'/>
                       )
                     }
                     {
