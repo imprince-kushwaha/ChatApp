@@ -57,7 +57,7 @@ const Home = () => {
         }
     }, [])
 
-    const basePath = location.pathname === '/'
+    const basePath = location.pathname === '/chat'
     return (
         <>
             <Header />

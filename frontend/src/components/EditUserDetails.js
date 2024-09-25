@@ -75,8 +75,8 @@ const EditUserDetails = ({ onClose, user }) => {
     return (
         <div className='fixed top-0 left-0 right-0 bottom-0 bg-gray-600 bg-opacity-50 flex justify-center items-center z-10'>
             <div className='bg-white p-4 m-1 w-full max-w-sm rounded'>
-                <h2 className='font-semibold'>Profile Details</h2>
-                <p>Edit User Details</p>
+                <h2 className='font-semibold text-lg text-gray-800'>Profile Details</h2>
+                <p className='text-gray-700 text-center'>Edit User Details</p>
                 <form onSubmit={handleSubmit}>
                     <div className="mb-4">
                         <label htmlFor="name" className="block font-medium text-base mb-2"> Name</label>
