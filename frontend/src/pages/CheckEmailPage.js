@@ -13,10 +13,12 @@ const CheckEmailPage = () => {
   })
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
+    setFormData((prevData) => {
+      return{
+        ...prevData,
       [name]: value,
-    }))
+    }
+    })
   }
 
   const navigate = useNavigate()
